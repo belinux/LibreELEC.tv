@@ -11,6 +11,7 @@ This project is for Rockchip SoC devices
 **RK3328**
 * [PINE64 ROCK64](devices/RK3328)
 * [Popcorn Hour RockBox](devices/RK3328)
+* [Popcorn Hour Transformer](devices/RK3328)
 * [Firefly ROC-RK3328-CC](devices/RK3328)
 
 **RK3399**

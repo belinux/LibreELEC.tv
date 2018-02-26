@@ -642,3 +642,63 @@ index 48c46f4b25ae..8086940664b4 100644
  
  	/*
  	 * The Designware IP uses a different byte format from standard
+
+From ba31c3d5eb595d9b5266e1a52df6e71c1557d14d Mon Sep 17 00:00:00 2001
+From: David Carrillo-Cisneros <davidcc@google.com>
+Date: Tue, 18 Jul 2017 18:18:37 -0700
+Subject: [PATCH] UPSTREAM: perf tools: Add EXCLUDE_EXTLIBS and EXTRA_PERFLIBS
+ to makefile
+
+The goal is to allow users to override linking of libraries that
+were automatically added to PERFLIBS.
+
+EXCLUDE_EXTLIBS contains linker flags to be removed from LIBS
+while EXTRA_PERFLIBS contains linker flags to be added.
+
+My use case is to force certain library to be build statically,
+e.g. for libelf:
+
+  EXCLUDE_EXTLIBS=-lelf EXTRA_PERFLIBS=path/libelf.a
+
+Signed-off-by: David Carrillo-Cisneros <davidcc@google.com>
+Acked-by: Jiri Olsa <jolsa@kernel.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Elena Reshetova <elena.reshetova@intel.com>
+Cc: Kees Kook <keescook@chromium.org>
+Cc: Paul Turner <pjt@google.com>
+Cc: Stephane Eranian <eranian@google.com>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Wang Nan <wangnan0@huawei.com>
+Link: http://lkml.kernel.org/r/20170719011839.99399-3-davidcc@google.com
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+(cherry picked from commit cb281fea4b0a326d2a2104f8ffae2b6895c561fd)
+---
+ tools/perf/Makefile.perf | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/tools/perf/Makefile.perf b/tools/perf/Makefile.perf
+index fb1c9ddc3478..9b3b9bd50d54 100644
+--- a/tools/perf/Makefile.perf
++++ b/tools/perf/Makefile.perf
+@@ -33,6 +33,11 @@ include config/utilities.mak
+ #
+ # Define EXTRA_CFLAGS=-m64 or EXTRA_CFLAGS=-m32 as appropriate for cross-builds.
+ #
++# Define EXCLUDE_EXTLIBS=-lmylib to exclude libmylib from the auto-generated
++# EXTLIBS.
++#
++# Define EXTRA_PERFLIBS to pass extra libraries to PERFLIBS.
++#
+ # Define NO_DWARF if you do not want debug-info analysis feature at all.
+ #
+ # Define WERROR=0 to disable treating any warnings as errors.
+@@ -289,7 +294,8 @@ ifdef ASCIIDOC8
+   export ASCIIDOC8
+ endif
+ 
+-LIBS = -Wl,--whole-archive $(PERFLIBS) -Wl,--no-whole-archive -Wl,--start-group $(EXTLIBS) -Wl,--end-group
++EXTLIBS := $(call filter-out,$(EXCLUDE_EXTLIBS),$(EXTLIBS))
++LIBS = -Wl,--whole-archive $(PERFLIBS) $(EXTRA_PERFLIBS) -Wl,--no-whole-archive -Wl,--start-group $(EXTLIBS) -Wl,--end-group
+ 
+ export INSTALL SHELL_PATH
+ 
