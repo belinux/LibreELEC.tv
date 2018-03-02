@@ -1,5 +1,5 @@
 PKG_NAME="resource.images.studios.white"
-PKG_VERSION="0.0.7"
+PKG_VERSION="0.0.10"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE=""
