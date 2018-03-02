@@ -32,7 +32,7 @@
   SKINS="Estuary AeonNox"
 
 # Default Skin (Estuary)
-  SKIN_DEFAULT="AeonNox"
+  SKIN_DEFAULT="Estuary"
 
 # install extra subtitle Fonts for KODI (yes / no)
   KODI_EXTRA_FONTS="yes"
