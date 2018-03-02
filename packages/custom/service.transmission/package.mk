@@ -1,5 +1,5 @@
 PKG_NAME="service.transmission"
-PKG_VERSION="8.2.15
+PKG_VERSION="8.2.15"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/thoradia/thoradia"
