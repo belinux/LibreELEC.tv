@@ -5,7 +5,7 @@ PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/BigNoid/Aeon-Nox"
 PKG_URL="https://github.com/BigNoid/Aeon-Nox/archive/krypton.tar.gz"
 PKG_SOURCE_DIR="Aeon-Nox-krypton"
-PKG_DEPENDS_TARGET="toolchain kodi script.grab.fanart script.skinshortcuts"
+PKG_DEPENDS_TARGET="toolchain kodi script.grab.fanart script.skinshortcuts service.library.data.provider resource.images.studios.white resource.images.recordlabels.white"
 PKG_SECTION="mediacenter"
 PKG_SHORTDESC="kodi-theme-AeonNox: A skin for XBMC/Kodi"
 PKG_LONGDESC="kodi-theme-AeonNox: A skin for XBMC/Kodi."
@@ -19,5 +19,5 @@ make_target() {
 
 makeinstall_target() {
   mkdir -p $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5
-    cp -a */ $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5
+    cp -a ./* $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5
 }
