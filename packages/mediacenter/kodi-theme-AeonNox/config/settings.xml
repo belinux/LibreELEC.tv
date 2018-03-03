@@ -154,7 +154,7 @@
     <setting id="Custom5HomeItem.Path" type="string"></setting>
     <setting id="54.Albums.InfoPanel" type="string"></setting>
     <setting id="ShutdownHomeItem.Widget" type="string"></setting>
-    <setting id="SettingsHomeItem.MultiFanart" type="string">/storage/artwork/</setting>
+    <setting id="SettingsHomeItem.MultiFanart" type="string">5</setting>
     <setting id="MusicHomeItem.InfoLine" type="string"></setting>
     <setting id="TVShowHomeItem.Path" type="string"></setting>
     <setting id="FavoritesHomeItem.Path" type="string"></setting>
@@ -224,7 +224,7 @@
     <setting id="Custom1HomeItem.Icon" type="string"></setting>
     <setting id="FavoritesHomeItem.WidgetType" type="string"></setting>
     <setting id="Custom2HomeItem.WidgetLabel" type="string"></setting>
-    <setting id="LiveTVHomeItem.MultiFanart" type="string">/storage/artwork/</setting>
+    <setting id="LiveTVHomeItem.MultiFanart" type="string">5</setting>
     <setting id="weatherfanart.path" type="string"></setting>
     <setting id="ShutdownHomeItem.BGType" type="string"></setting>
     <setting id="Custom6HomeItem.SubMenu" type="string"></setting>
