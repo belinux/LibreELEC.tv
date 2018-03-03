@@ -42,6 +42,14 @@ if [ ! -f $HOME/.kodi/userdata/guisettings.xml ] ; then
   fi
 fi
 
+# setup custom Aeon Nox 5 addon settings
+if [ ! -d $HOME/.kodi/userdata/addon_data/skin.aeon.nox.5 ]; then
+  if [ -d /usr/share/kodi/config/skin.aeon.nox.5 ]; then
+    mkdir -p $HOME/.kodi/userdata/addon_data
+    cp -R /usr/share/kodi/config/skin.aeon.nox.5 $HOME/.kodi/userdata/addon_data
+  fi
+fi
+
 KODI_ARGS="--lircdev /run/lirc/lircd"
 
 echo "KODI_ARGS=\"$KODI_ARGS\"" > /run/libreelec/kodi.conf
