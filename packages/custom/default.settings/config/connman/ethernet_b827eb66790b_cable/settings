@@ -1,0 +1,14 @@
+[ethernet_b827eb66790b_cable]
+Name=Wired
+AutoConnect=true
+Modified=2018-03-02T09:49:53.797851Z
+IPv4.method=manual
+IPv4.DHCP.LastAddress=192.168.1.8
+IPv6.method=off
+IPv6.privacy=disabled
+IPv4.netmask_prefixlen=24
+IPv4.local_address=192.168.1.140
+IPv4.gateway=192.168.1.1
+Nameservers=62.2.17.61;62.2.24.158;62.2.17.60;
+Timeservers=0.pool.ntp.org;1.pool.ntp.org;2.pool.ntp.org;
+Domains=v.cablecom.net;

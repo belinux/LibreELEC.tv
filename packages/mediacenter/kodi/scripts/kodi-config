@@ -50,6 +50,22 @@ if [ ! -d $HOME/.kodi/userdata/addon_data/skin.aeon.nox.5 ]; then
   fi
 fi
 
+# setup avoid first run
+if [ ! -d $HOME/.kodi/userdata/addon_data/service.libreelec.settings ]; then
+  if [ -d /usr/share/kodi/config/service.libreelec.settings ]; then
+    mkdir -p $HOME/.kodi/userdata/addon_data
+    cp -R /usr/share/kodi/config/service.libreelec.settings $HOME/.kodi/userdata/addon_data
+  fi
+fi
+
+# set default static ip
+if [ ! -d $HOME/.cache/connman ]; then
+  if [ -d /usr/share/kodi/config/connman ]; then
+    mkdir -p $HOME/.kodi/userdata/addon_data
+    cp -R /usr/share/kodi/config/connman $HOME/.cache
+  fi
+fi
+
 KODI_ARGS="--lircdev /run/lirc/lircd"
 
 echo "KODI_ARGS=\"$KODI_ARGS\"" > /run/libreelec/kodi.conf
