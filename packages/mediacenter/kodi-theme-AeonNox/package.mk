@@ -19,8 +19,9 @@ make_target() {
 
 makeinstall_target() {
   rm -f resources/screenshot-*.jpg
-  mkdir -p $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5
+  mkdir -p /storage/.kodi/addons/skin.aeon.nox.5
+  mkdir -p $INSTALL/usr/share/kodi/addons/
+  ln -sf /storage/.kodi/addons/skin.aeon.nox.5 $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5
 
-  ln -sf /storage/.kodi/addons/skin.aeon.nox.5/1080i $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5/1080i
   cp -a ./* $INSTALL/usr/share/kodi/addons/skin.aeon.nox.5
 }
