@@ -61,7 +61,7 @@ fi
 # set default static ip
 if [ ! -d $HOME/.cache/connman ]; then
   if [ -d /usr/share/kodi/config/connman ]; then
-    mkdir -p $HOME/.kodi/userdata/addon_data
+    mkdir -p $HOME/.cache
     cp -R /usr/share/kodi/config/connman $HOME/.cache
   fi
 fi

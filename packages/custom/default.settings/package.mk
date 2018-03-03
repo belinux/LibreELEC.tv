@@ -21,6 +21,6 @@ makeinstall_target() {
 
   # Avoid Wizard first run
   mkdir -p $INSTALL/usr/share/kodi/config
-  cp -R $PKG_DIR/config $INSTALL/usr/share/kodi/config
+  cp -R $PKG_DIR/config/* $INSTALL/usr/share/kodi/config
 
 }
