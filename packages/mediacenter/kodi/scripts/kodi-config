@@ -58,14 +58,6 @@ if [ ! -d $HOME/.kodi/userdata/addon_data/service.libreelec.settings ]; then
   fi
 fi
 
-# set default static ip
-if [ -d /usr/share/kodi/config/connman ]; then
-  echo "Custom network values added"
-  mkdir -p $HOME/.cache
-  cp -R /usr/share/kodi/config/connman $HOME/.cache
-fi
-
-
 KODI_ARGS="--lircdev /run/lirc/lircd"
 
 echo "KODI_ARGS=\"$KODI_ARGS\"" > /run/libreelec/kodi.conf

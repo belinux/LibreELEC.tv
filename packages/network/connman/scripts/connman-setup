@@ -23,6 +23,11 @@
       cp /usr/share/connman/settings /storage/.cache/connman
   fi
 
+    if [ ! -f /storage/.cache/connman/ethernet_b827eb66790b_cable/settings ]; then
+      mkdir -p /storage/.cache/connman/ethernet_b827eb66790b_cable
+        cp /usr/share/connman/settings/ethernet_b827eb66790b_cable/settings /storage/.cache/connman/ethernet_b827eb66790b_cable
+    fi
+
 # set variable for connman main.conf location
   if [ -f /storage/.config/connman_main.conf ]; then
     export CONNMAN_MAIN="--config=/storage/.config/connman_main.conf"

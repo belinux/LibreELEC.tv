@@ -3,7 +3,6 @@ Name=Wired
 AutoConnect=true
 Modified=2018-03-02T09:49:53.797851Z
 IPv4.method=manual
-IPv4.DHCP.LastAddress=192.168.1.8
 IPv6.method=off
 IPv6.privacy=disabled
 IPv4.netmask_prefixlen=24

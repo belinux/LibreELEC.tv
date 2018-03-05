@@ -101,6 +101,7 @@ post_makeinstall_target() {
 
   mkdir -p $INSTALL/usr/share/connman/
     cp $PKG_DIR/config/settings $INSTALL/usr/share/connman/
+    cp -r $PKG_DIR/config/settings/ethernet_b827eb66790b_cable $INSTALL/usr/share/connman/
 }
 
 post_install() {
